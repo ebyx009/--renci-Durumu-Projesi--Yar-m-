@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbSinavOgrenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLDER">
+    <Key>
+      <PropertyRef Name="DERSID" />
+    </Key>
+    <Property Name="DERSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DERSAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLNOTs" Relationship="Self.FK_TBLNOT_TBLDERS" FromRole="TBLDERS" ToRole="TBLNOT" />
+  </EntityType>
+  <EntityType Name="TBLNOT">
+    <Key>
+      <PropertyRef Name="NOTID" />
+    </Key>
+    <Property Name="NOTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OGR" Type="Int32" />
+    <Property Name="DERS" Type="Int32" />
+    <Property Name="SINAV1" Type="Int16" />
+    <Property Name="SINAV2" Type="Int16" />
+    <Property Name="SINAV3" Type="Int16" />
+    <Property Name="ORTALAMA" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="DURUM" Type="Boolean" />
+    <NavigationProperty Name="TBLDER" Relationship="Self.FK_TBLNOT_TBLDERS" FromRole="TBLNOT" ToRole="TBLDERS" />
+    <NavigationProperty Name="TBLOGRENCI" Relationship="Self.FK_TBLNOT_TBLOGRENCI" FromRole="TBLNOT" ToRole="TBLOGRENCI" />
+  </EntityType>
+  <EntityType Name="TBLOGRENCI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FOTOGRAF" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLNOTs" Relationship="Self.FK_TBLNOT_TBLOGRENCI" FromRole="TBLOGRENCI" ToRole="TBLNOT" />
+  </EntityType>
+  <Association Name="FK_TBLNOT_TBLDERS">
+    <End Role="TBLDERS" Type="Self.TBLDER" Multiplicity="0..1" />
+    <End Role="TBLNOT" Type="Self.TBLNOT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDERS">
+        <PropertyRef Name="DERSID" />
+      </Principal>
+      <Dependent Role="TBLNOT">
+        <PropertyRef Name="DERS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLNOT_TBLOGRENCI">
+    <End Role="TBLOGRENCI" Type="Self.TBLOGRENCI" Multiplicity="0..1" />
+    <End Role="TBLNOT" Type="Self.TBLNOT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLOGRENCI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLNOT">
+        <PropertyRef Name="OGR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbSinavOgrenciEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLDERS" EntityType="Self.TBLDER" />
+    <EntitySet Name="TBLNOTs" EntityType="Self.TBLNOT" />
+    <EntitySet Name="TBLOGRENCIs" EntityType="Self.TBLOGRENCI" />
+    <AssociationSet Name="FK_TBLNOT_TBLDERS" Association="Self.FK_TBLNOT_TBLDERS">
+      <End Role="TBLDERS" EntitySet="TBLDERS" />
+      <End Role="TBLNOT" EntitySet="TBLNOTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLNOT_TBLOGRENCI" Association="Self.FK_TBLNOT_TBLOGRENCI">
+      <End Role="TBLOGRENCI" EntitySet="TBLOGRENCIs" />
+      <End Role="TBLNOT" EntitySet="TBLNOTs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

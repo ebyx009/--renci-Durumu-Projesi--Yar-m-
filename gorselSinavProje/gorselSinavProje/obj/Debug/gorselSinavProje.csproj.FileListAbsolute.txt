@@ -1,0 +1,15 @@
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.csproj.AssemblyReference.cache
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.Form1.resources
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.Properties.Resources.resources
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.csproj.GenerateResource.cache
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.csproj.CoreCompileInputs.cache
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\gorselSinavProje.exe.config
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\gorselSinavProje.exe
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\gorselSinavProje.pdb
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\EntityFramework.dll
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\EntityFramework.xml
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.csproj.CopyComplete
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.exe
+C:\Users\ebuze\source\repos\gorselSinavProje\gorselSinavProje\obj\Debug\gorselSinavProje.pdb
